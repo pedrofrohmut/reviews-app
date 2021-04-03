@@ -1,6 +1,8 @@
 import React from "react"
 import { createStackNavigator } from "@react-navigation/stack"
 
+import Header from "../layout/header"
+
 import HomeScreen from "../screens/home"
 import ReviewDetailsScreen from "../screens/review-details"
 
@@ -16,13 +18,18 @@ const HomeStack = () => (
       headerTintColor: "#e9e9e9",
       headerTitleStyle: {
         fontFamily: "Nunito-Bold"
-      }
+      },
+      headerTitleAlign: "center"
     }}
   >
     <Stack.Screen
       name="Home"
       component={HomeScreen}
-      options={{ title: "GameZone" }}
+      options={({ navigation }) => ({
+        headerTitle: props => (
+          <Header {...props} navigation={navigation} title="GameZone" />
+        )
+      })}
     />
     <Stack.Screen
       name="ReviewDetails"

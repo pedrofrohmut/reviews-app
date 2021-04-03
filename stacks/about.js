@@ -2,12 +2,13 @@ import React from "react"
 import { createStackNavigator } from "@react-navigation/stack"
 
 import AboutScreen from "../screens/about"
+import Header from "../layout/header"
 
 const Stack = createStackNavigator()
 
 const AboutStack = () => (
   <Stack.Navigator
-    initialRouteName="Home"
+    initialRouteName="About"
     screenOptions={{
       headerStyle: {
         backgroundColor: "#252545"
@@ -21,7 +22,11 @@ const AboutStack = () => (
     <Stack.Screen
       name="About"
       component={AboutScreen}
-      options={{ title: "About" }}
+      options={({ navigation }) => ({
+        headerTitle: props => (
+          <Header {...props} navigation={navigation} title="About" />
+        )
+      })}
     />
   </Stack.Navigator>
 )
