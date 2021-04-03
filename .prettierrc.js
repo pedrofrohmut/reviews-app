@@ -7,6 +7,6 @@ module.exports = {
   trailingComma: "none",
   endOfLine: "lf",
   bracketSpacing: true,
-  jsxBracketSameLine: true,
+  jsxBracketSameLine: false,
   arrowParens: "avoid"
 }
