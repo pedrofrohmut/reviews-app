@@ -16,7 +16,8 @@ const AboutStack = () => (
       headerTintColor: "#e9e9e9",
       headerTitleStyle: {
         fontFamily: "Nunito-Bold"
-      }
+      },
+      headerTitleAlign: "center"
     }}
   >
     <Stack.Screen
