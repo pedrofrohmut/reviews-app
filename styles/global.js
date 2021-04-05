@@ -4,7 +4,7 @@ const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 24,
-    backgroundColor: "#d5d5e1"
+    backgroundColor: "#e5e5f1"
   },
   titleText: {
     fontFamily: "Nunito-Bold",

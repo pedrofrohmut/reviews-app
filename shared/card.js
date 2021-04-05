@@ -12,7 +12,7 @@ const Card = ({ children }) => {
 const localStyles = StyleSheet.create({
   card: {
     alignSelf: "center",
-    backgroundColor: "#d5d5e1",
+    backgroundColor: "#e5e5f1",
     borderRadius: 4,
     width: "98%",
     marginBottom: 18,

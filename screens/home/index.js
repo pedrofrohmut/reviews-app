@@ -1,9 +1,11 @@
 import React, { useState } from "react"
-import { FlatList, Text, TouchableOpacity, View } from "react-native"
+import { View } from "react-native"
 
-import Card from "../shared/card"
+import AddReviewFormModal from "./add-review-form-modal"
+import AddButtom from "./add-button"
+import ReviewList from "./review-list"
 
-import globalStyles from "../styles/global"
+import globalStyles from "../../styles/global"
 
 const INITIAL_REVIEWS = [
   {
@@ -28,21 +30,15 @@ const INITIAL_REVIEWS = [
 
 const Home = ({ navigation }) => {
   const [reviews, setReviews] = useState(INITIAL_REVIEWS)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   return (
     <View style={globalStyles.container}>
-      <FlatList
-        data={reviews}
-        keyExtractor={review => review.id}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() => navigation.navigate("ReviewDetails", item)}
-          >
-            <Card>
-              <Text style={globalStyles.titleText}>{item.title}</Text>
-            </Card>
-          </TouchableOpacity>
-        )}
+      <AddReviewFormModal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
       />
+      <AddButtom setIsModalOpen={setIsModalOpen} />
+      <ReviewList reviews={reviews} navigation={navigation} />
     </View>
   )
 }
