@@ -4,6 +4,7 @@ module.exports = {
   rules: {
     semi: ["warn", "never"],
     quotes: ["warn", "double"],
-    "comma-dangle": ["error", "never"]
+    "comma-dangle": ["error", "never"],
+    curly: "off"
   }
 }
