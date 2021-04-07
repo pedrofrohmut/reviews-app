@@ -1,12 +1,12 @@
 import React from "react"
-import { Text } from "react-native"
 
 import AppModal from "../../shared/modal"
+import ReviewForm from "./review-form"
 
-const AddReviewFormModal = ({ isModalOpen, setIsModalOpen }) => {
+const AddReviewFormModal = ({ isModalOpen, setIsModalOpen, addReview }) => {
   return (
     <AppModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
-      <Text>Hello from modal</Text>
+      <ReviewForm addReview={addReview} setIsModalOpen={setIsModalOpen} />
     </AppModal>
   )
 }

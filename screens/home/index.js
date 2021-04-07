@@ -31,11 +31,18 @@ const INITIAL_REVIEWS = [
 const Home = ({ navigation }) => {
   const [reviews, setReviews] = useState(INITIAL_REVIEWS)
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const addReview = newReview => {
+    const id = Math.floor(Math.random() * 1000)
+    setReviews([...reviews, { id, ...newReview }])
+  }
+
   return (
     <View style={globalStyles.container}>
       <AddReviewFormModal
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
+        addReview={addReview}
       />
       <AddButtom setIsModalOpen={setIsModalOpen} />
       <ReviewList reviews={reviews} navigation={navigation} />
